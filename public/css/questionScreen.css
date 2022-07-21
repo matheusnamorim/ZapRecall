@@ -1,0 +1,67 @@
+.questionScreen{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FB6B6B;
+    border: 1px solid #DBDBDB;
+}
+
+.navBar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 45px;
+}
+
+.navBar img{
+    width: 52px;
+    height: 60px;
+}
+
+.navBar p{
+    font-family: 'Righteous', cursive;
+    font-size: 36px;
+    color: #FFFFFF;
+    margin-left: 20px;
+}
+
+.boxQuestions{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    height: 65px;
+    padding: 0 10px;
+    margin-top: 20px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+}
+
+.boxQuestions ion-icon{
+    font-size: 25px;
+}
+
+.boxQuestions p{
+    color: #333333;
+    font-weight: 700;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    background-color: #FFFFFF;
+}
+
+.footer p{
+    font-size: 18px;
+    color: #333333;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
+}

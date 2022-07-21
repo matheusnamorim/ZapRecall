@@ -1,22 +1,11 @@
-
-* {
-    box-sizing: border-box;
-}
-
-body{
-    /*font-family: 'Righteous', cursive; */
-    font-family: 'Recursive', sans-serif;
-
-}
 .homeScreen{
-    width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #FB6B6B;
-    border: 1px solid royalblue;
+    border: 1px solid #DBDBDB;
 }
 
 .homeScreen img{
@@ -28,7 +17,6 @@ body{
 .homeScreen p{
     font-family: 'Righteous', cursive;
     font-size: 36px;
-    font-weight: 400;
     color: #FFFFFF;
     margin-bottom: 30px;
 }
@@ -46,9 +34,7 @@ body{
 }
 
 .loginRecall p{
-    font-family: 'Recursive', sans-serif;
     font-size: 18px;
-    font-weight: 400;
     color: #D70900;
     margin-bottom: 0;
 }
