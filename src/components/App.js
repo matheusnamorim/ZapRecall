@@ -4,11 +4,12 @@ import QuestionsScreen from "./QuestionsScreen/QuestionsScreen";
 import '../assets/css/reset.css';
 import '../assets/css/main.css';
 import logo from '../assets/img/logo.svg';
+import arrow from '../assets/img/Vector.svg';
 
 function App(){
 
     const arrayQuestions = [
-        {text:"O que é isso", state: false},
+        {text:"O que é JSX?", state: false},
         {text:"O que é isso2", state: false},
         {text:"O que é isso3", state: false},
         {text:"O que é isso4", state: false},
@@ -20,13 +21,12 @@ function App(){
         {text:"O que é isso10", state: false}
     ];
     arrayQuestions.sort(() => Math.random() - 0.5);
-
     const [screen, setScreen] = React.useState(0);
 
     if(screen === 0){
         return (<><HomeScreen img={logo} screen={setScreen}/></>);
     }else if(screen === 1){
-        return (<><QuestionsScreen img={logo} arrayQuestions = {arrayQuestions}/></>);
+        return (<><QuestionsScreen img={logo} arrayQuestions={arrayQuestions} arrow={arrow}/></>);
     }
 }
 {/**/}

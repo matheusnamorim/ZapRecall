@@ -2,9 +2,9 @@ import './style.css';
 import BoxQuestions from "../BoxQuestions/BoxQuestions";
 import React from 'react';
 
-function QuestionsScreen({img, arrayQuestions}){
+function QuestionsScreen({img, arrayQuestions, arrow}){
     const [questions, setQuestions] = React.useState([...arrayQuestions]);
-
+   
     return(
         <div className="questionScreen">
         <div className="navBar">
@@ -13,7 +13,7 @@ function QuestionsScreen({img, arrayQuestions}){
         </div>
     
         <ul className="questions">
-          {questions.map((itens, index) => (<BoxQuestions question={itens} index={index} key={index} />))}
+          {questions.map((itens, index) => (<BoxQuestions question={itens} index={index} arrow={arrow} key={index} />))}
         </ul>
         
         <div className="footer">

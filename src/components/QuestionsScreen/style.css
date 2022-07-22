@@ -8,10 +8,11 @@
 }
 
 .navBar{
+    width: 250px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-top: 45px;
+    justify-content: space-evenly;
+    margin: 45px 0;
 }
 
 .navBar img{
@@ -23,7 +24,6 @@
     font-family: 'Righteous', cursive;
     font-size: 36px;
     color: #FFFFFF;
-    margin-left: 20px;
 }
 
 .questions{
