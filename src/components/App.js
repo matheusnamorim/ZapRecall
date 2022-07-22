@@ -1,12 +1,16 @@
-import HomeScreen from "./HomeScreen";
-import QuestionsScreen from "./QuestionsScreen";
+import HomeScreen from "./HomeScreen/HomeScreen";
+import QuestionsScreen from "./QuestionsScreen/QuestionsScreen";
+import '../assets/css/reset.css';
+import '../assets/css/main.css';
+import logo from '../assets/img/logo.svg';
+
 
 export default function App(){
     return (
         <>
         {/**/}
-        <HomeScreen/>
-        <QuestionsScreen/>
+        <HomeScreen img={logo}/>
+        <QuestionsScreen img={logo}/>
         </>
     );
 }

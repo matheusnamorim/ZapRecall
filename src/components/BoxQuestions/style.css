@@ -1,0 +1,21 @@
+.boxQuestions{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    height: 65px;
+    padding: 0 10px;
+    margin-top: 20px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+}
+
+.boxQuestions ion-icon{
+    font-size: 25px;
+}
+
+.boxQuestions p{
+    color: #333333;
+    font-weight: 700;
+}

@@ -1,9 +1,9 @@
+import './style.css';
 
-export default function HomeScreen(){
-
+export default function HomeScreen({img}){
     return (
         <div className="homeScreen">
-        <img src="assets/logo.svg" alt="logo"/>
+        <img src={img}/>
         <p>ZapRecall</p>
         <div className="loginRecall">
             <p>Iniciar Recall!</p>
