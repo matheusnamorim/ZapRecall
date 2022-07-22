@@ -9,16 +9,14 @@ import arrow from '../assets/img/Vector.svg';
 function App(){
 
     const arrayQuestions = [
-        {text:"O que é JSX?", state: false},
-        {text:"O que é isso2", state: false},
-        {text:"O que é isso3", state: false},
-        {text:"O que é isso4", state: false},
-        {text:"O que é isso5", state: false},
-        {text:"O que é isso6", state: false},
-        {text:"O que é isso7", state: false},
-        {text:"O que é isso8", state: false},
-        {text:"O que é isso9", state: false},
-        {text:"O que é isso10", state: false}
+        {question:"O que é JSX?", answers: "Uma extensão de linguagem do JavaScript", state: false},
+        {question:"O React é __ ", answers: "Uma biblioteca JavaScript para construção de interfaces", state: false},
+        {question:"Componentes devem iniciar com __ ", answers: "Letra maiúscula", state: false},
+        {question:"Podemos colocar __ dentro do JSX", answers: "Expressões", state: false},
+        {question:"O ReactDOM nos ajuda __", answers: "Interagindo com a DOM para colocar componentes React na mesma", state: false},
+        {question:"Usamos o npm para __", answers: "Gerenciar os pacotes necessários e suas dependências", state: false},
+        {question:"Usamos props para __", answers: "Passar diferentes informações para componentes", state: false},
+        {question:"Usamos estado (state) para __", answers: "Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente", state: false}
     ];
     arrayQuestions.sort(() => Math.random() - 0.5);
     const [screen, setScreen] = React.useState(0);

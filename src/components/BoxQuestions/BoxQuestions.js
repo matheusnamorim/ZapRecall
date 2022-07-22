@@ -4,6 +4,12 @@ import './style.css';
 export default function BoxQuestions({index, question, arrow}){
   
   const [stateQuestion, setStateQuestion] = React.useState(question.state);
+  const [msgQuestion, setMsgQuestion] = React.useState(question.question);
+
+  function checks(){
+    if(msgQuestion === question.question) return false;
+    else return true;
+  }
 
   return (
         <li onClick={() => setStateQuestion(true)} className={`${stateQuestion ? 'questionOpen' : 'boxQuestions'}`}>
@@ -12,8 +18,8 @@ export default function BoxQuestions({index, question, arrow}){
             <ion-icon name="play-outline"></ion-icon>
           </div>
           <div className={`${stateQuestion ? 'questionOpen' : 'esconder'}`}>
-            <p>{question.text}</p>
-            <img className='arrowQuestion' src={arrow}/>
+            <p>{msgQuestion}</p>
+            <img onClick={() => setMsgQuestion(question.answers)} className={`${checks() ? 'esconder' : 'arrowQuestion'}`} src={arrow}/>
           </div>
       </li>
     );
