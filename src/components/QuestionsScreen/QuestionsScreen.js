@@ -1,16 +1,9 @@
 import './style.css';
 import BoxQuestions from "../BoxQuestions/BoxQuestions";
+import React from 'react';
 
-const array = ["O que é isso", "O que é isso2", "O que é isso3", "O que é isso4", "O que é isso5"];
-
-function QuestionsScreen({img}){
-
-    array.sort(() => Math.random() - 0.5);
-
-    function teste(){
-      alert("ta funfanfo");
-      return;
-    }
+function QuestionsScreen({img, arrayQuestions}){
+    const [questions, setQuestions] = React.useState([...arrayQuestions]);
 
     return(
         <div className="questionScreen">
@@ -20,7 +13,7 @@ function QuestionsScreen({img}){
         </div>
     
         <ul className="questions">
-          {array.map((itens, index) => <BoxQuestions index={index} key={index} teste={teste}/>)}
+          {questions.map((itens, index) => (<BoxQuestions question={itens} index={index} key={index} />))}
         </ul>
         
         <div className="footer">

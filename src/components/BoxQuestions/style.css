@@ -19,3 +19,23 @@
     color: #333333;
     font-weight: 700;
 }
+
+.questionOpen{
+    width: 300px;
+    height: 131px;
+    background-color: #FFFFD4;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+}
+
+.esconder{
+    display: none;
+}
+
+.questionClosed{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
