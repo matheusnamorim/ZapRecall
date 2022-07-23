@@ -4,7 +4,7 @@ import AnswerButton from '../AnswerButton/AnswerButton';
 
 const answersBtn = ['Não\nlembrei', 'Quase não\nlembrei', 'Zap!'];
 
-export default function BoxQuestions({index, question, arrow}){
+export default function BoxQuestions({index, question, arrow, cont}){
   
   const [stateQuestion, setStateQuestion] = React.useState(question.state);
   const [lockFunction, setLockFunction] = React.useState(false);
@@ -26,6 +26,7 @@ export default function BoxQuestions({index, question, arrow}){
         setStateQuestion(question.state);
       }
       if(lock !== undefined){
+        cont();
         question.state = !stateQuestion;
         setStateQuestion(question.state);
         setLockFunction(true);

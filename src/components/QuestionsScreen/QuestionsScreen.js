@@ -3,8 +3,13 @@ import BoxQuestions from "../BoxQuestions/BoxQuestions";
 import React from 'react';
 
 function QuestionsScreen({img, arrayQuestions, arrow}){
-    const [questions, setQuestions] = React.useState([...arrayQuestions]);
-   
+    const questions = [...arrayQuestions];
+    const [answersNumbers, setAnswersNumbers] = React.useState(0);
+
+    function incAnswers(){
+      setAnswersNumbers(answersNumbers + 1);
+    }
+
     return(
         <div className="questionScreen">
         <div className="navBar">
@@ -13,11 +18,11 @@ function QuestionsScreen({img, arrayQuestions, arrow}){
         </div>
     
         <ul className="questions">
-          {questions.map((itens, index) => (<BoxQuestions question={itens} index={index} arrow={arrow} key={index} />))}
+          {questions.map((itens, index) => (<BoxQuestions question={itens} index={index} arrow={arrow} cont={incAnswers} key={index} />))}
         </ul>
         
         <div className="footer">
-          <p>0/4 CONCLUÍDOS</p>
+          <p>{answersNumbers}/{arrayQuestions.length} CONCLUÍDOS</p>
         </div>
       </div>          
     );
