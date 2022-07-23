@@ -5,6 +5,7 @@ import React from 'react';
 function QuestionsScreen({img, arrayQuestions, arrow}){
     const questions = [...arrayQuestions];
     const [answersNumbers, setAnswersNumbers] = React.useState(0);
+    const [classIcon, setClassIcon]  = React.useState('escondido');
 
     function incAnswers(){
       setAnswersNumbers(answersNumbers + 1);
@@ -23,6 +24,7 @@ function QuestionsScreen({img, arrayQuestions, arrow}){
         
         <div className="footer">
           <p>{answersNumbers}/{arrayQuestions.length} CONCLUÍDOS</p>
+          <div className={classIcon}></div>
         </div>
       </div>          
     );

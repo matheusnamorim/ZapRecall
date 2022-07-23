@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import AnswerButton from '../AnswerButton/AnswerButton';
+import AnswerIcons from '../AnswerIcons/AnswerIcons';
 
 const answersBtn = ['Não\nlembrei', 'Quase não\nlembrei', 'Zap!'];
 
@@ -8,9 +9,7 @@ export default function BoxQuestions({index, question, arrow, cont}){
   
   const [stateQuestion, setStateQuestion] = React.useState(question.state);
   const [lockFunction, setLockFunction] = React.useState(false);
-  const [btn1, setBtn1] = React.useState(false);
-  const [btn2, setBtn2] = React.useState(false);
-  const [btn3, setBtn3] = React.useState(false);
+  const [icon, setIcon] = React.useState(0);
   const [stateClass, setStateClass] = React.useState('pDefault');
   const [msgQuestion, setMsgQuestion] = React.useState(question.question);
 
@@ -31,15 +30,15 @@ export default function BoxQuestions({index, question, arrow, cont}){
         setStateQuestion(question.state);
         setLockFunction(true);
         if(lock === 'Não\nlembrei') {
-          setBtn1(true); 
+          setIcon(1);
           setStateClass('style1');
         }
         if(lock === 'Quase não\nlembrei') {
-          setBtn2(true); 
+          setIcon(2);
           setStateClass('style2');
         }
         if(lock === 'Zap!') {
-          setBtn3(true);
+          setIcon(3);
           setStateClass('style3'); 
         }
       }
@@ -51,9 +50,7 @@ export default function BoxQuestions({index, question, arrow, cont}){
           <div className={`${stateQuestion ? 'esconder' : 'questionAligned'}`}>
             <p className={stateClass}>Pergunta {index+1}</p>
             <ion-icon class={`${lockFunction ? 'md hydrated esconder' : 'md hydrated'}`}name="play-outline"></ion-icon>
-            <ion-icon class={`${btn1 ? 'md hydrated style1' : 'md hydrated esconder'}`} name="close-circle"></ion-icon>
-            <ion-icon class={`${btn2 ? 'md hydrated style2' : 'md hydrated esconder'}`} name="help-circle"></ion-icon>
-            <ion-icon class={`${btn3 ? 'md hydrated style3' : 'md hydrated esconder'}`} name="checkmark-circle"></ion-icon>
+            <AnswerIcons type={icon}/>
           </div>
           <div className={`${stateQuestion ? 'open' : 'esconder'}`}>
             <p>{msgQuestion}</p>
