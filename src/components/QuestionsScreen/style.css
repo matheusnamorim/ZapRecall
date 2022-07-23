@@ -30,6 +30,10 @@
     margin-bottom: 180px;   
 }
 
+.questions > li{
+    margin-top: 20px;
+}
+
 .footer{
     position: fixed;
     bottom: 0;

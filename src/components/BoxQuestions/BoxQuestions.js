@@ -7,6 +7,11 @@ const answersBtn = ['Não\nlembrei', 'Quase não\nlembrei', 'Zap!'];
 export default function BoxQuestions({index, question, arrow}){
   
   const [stateQuestion, setStateQuestion] = React.useState(question.state);
+  const [lockFunction, setLockFunction] = React.useState(false);
+  const [btn1, setBtn1] = React.useState(false);
+  const [btn2, setBtn2] = React.useState(false);
+  const [btn3, setBtn3] = React.useState(false);
+  const [stateClass, setStateClass] = React.useState('pDefault');
   const [msgQuestion, setMsgQuestion] = React.useState(question.question);
 
   function checks(){
@@ -14,17 +19,38 @@ export default function BoxQuestions({index, question, arrow}){
     else return true;
   }
 
+  function back(lock){
+    if(lockFunction === false){
+      if(stateQuestion !== true){
+        question.state = !stateQuestion;
+        setStateQuestion(question.state);
+      }
+      if(lock !== undefined){
+        question.state = !stateQuestion;
+        setStateQuestion(question.state);
+        setLockFunction(true);
+        setStateClass('teste');
+        if(lock === 'Quase não\nlembrei') setBtn1(true); 
+        if(lock === 'Não\nlembrei') setBtn2(true); 
+        if(lock === 'Zap!') setBtn3(true); 
+      }
+    }
+  }
+
   return (
-        <li onClick={() => setStateQuestion(true)} className={`${stateQuestion ? 'questionOpen' : 'boxQuestions'}`}>
+        <li onClick={() => back()} className={`${stateQuestion ? 'questionOpen' : 'boxQuestions'}`}>
           <div className={`${stateQuestion ? 'esconder' : 'questionAligned'}`}>
-            <p>Pergunta {index+1}</p>
-            <ion-icon name="play-outline"></ion-icon>
+            <p className={stateClass}>Pergunta {index+1}</p>
+            <ion-icon class={`${lockFunction ? 'md hydrated esconder' : 'md hydrated'}`}name="play-outline"></ion-icon>
+            <ion-icon class={`${btn2 ? 'md hydrated' : 'md hydrated esconder'}`} name="close-circle"></ion-icon>
+            <ion-icon class={`${btn1 ? 'md hydrated' : 'md hydrated esconder'}`} name="help-circle"></ion-icon>
+            <ion-icon class={`${btn3 ? 'md hydrated' : 'md hydrated esconder'}`} name="checkmark-circle"></ion-icon>
           </div>
           <div className={`${stateQuestion ? 'open' : 'esconder'}`}>
             <p>{msgQuestion}</p>
             <img onClick={() => setMsgQuestion(question.answers)} className={`${checks() ? 'esconder' : 'arrowQuestion'}`} src={arrow}/>
             <div className={`${checks() ? 'answersButton' : 'esconder'}`}>
-              {answersBtn.map(itens => <AnswerButton text={itens} key={itens}/>)}
+              {answersBtn.map(itens => <AnswerButton text={itens} key={itens} teste={back}/>)}
             </div>
           </div>
       </li>
