@@ -29,10 +29,18 @@ export default function BoxQuestions({index, question, arrow}){
         question.state = !stateQuestion;
         setStateQuestion(question.state);
         setLockFunction(true);
-        setStateClass('teste');
-        if(lock === 'Quase não\nlembrei') setBtn1(true); 
-        if(lock === 'Não\nlembrei') setBtn2(true); 
-        if(lock === 'Zap!') setBtn3(true); 
+        if(lock === 'Não\nlembrei') {
+          setBtn1(true); 
+          setStateClass('style1');
+        }
+        if(lock === 'Quase não\nlembrei') {
+          setBtn2(true); 
+          setStateClass('style2');
+        }
+        if(lock === 'Zap!') {
+          setBtn3(true);
+          setStateClass('style3'); 
+        }
       }
     }
   }
@@ -42,9 +50,9 @@ export default function BoxQuestions({index, question, arrow}){
           <div className={`${stateQuestion ? 'esconder' : 'questionAligned'}`}>
             <p className={stateClass}>Pergunta {index+1}</p>
             <ion-icon class={`${lockFunction ? 'md hydrated esconder' : 'md hydrated'}`}name="play-outline"></ion-icon>
-            <ion-icon class={`${btn2 ? 'md hydrated' : 'md hydrated esconder'}`} name="close-circle"></ion-icon>
-            <ion-icon class={`${btn1 ? 'md hydrated' : 'md hydrated esconder'}`} name="help-circle"></ion-icon>
-            <ion-icon class={`${btn3 ? 'md hydrated' : 'md hydrated esconder'}`} name="checkmark-circle"></ion-icon>
+            <ion-icon class={`${btn1 ? 'md hydrated style1' : 'md hydrated esconder'}`} name="close-circle"></ion-icon>
+            <ion-icon class={`${btn2 ? 'md hydrated style2' : 'md hydrated esconder'}`} name="help-circle"></ion-icon>
+            <ion-icon class={`${btn3 ? 'md hydrated style3' : 'md hydrated esconder'}`} name="checkmark-circle"></ion-icon>
           </div>
           <div className={`${stateQuestion ? 'open' : 'esconder'}`}>
             <p>{msgQuestion}</p>

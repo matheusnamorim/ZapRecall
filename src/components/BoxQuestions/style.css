@@ -21,8 +21,32 @@
     font-size: 16px;
 }
 
-.teste{
+.style1, .style2, .style3{
     text-decoration-line: line-through;
+}
+
+.style1{
+    color: #FF3030;
+}
+
+.style1 ion-icon{
+    color: #FF3030;
+}
+
+.style2{
+    color: #FF922E;
+}
+
+.style2 ion-icon{
+    color: #FF922E;
+}
+
+.style3{
+    color: #2FBE34;
+}
+
+.style3 ion-icon{
+    color: #2FBE34;
 }
 
 .questionOpen{
