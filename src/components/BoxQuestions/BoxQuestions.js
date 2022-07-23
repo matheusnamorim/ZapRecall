@@ -5,8 +5,8 @@ import AnswerIcons from '../AnswerIcons/AnswerIcons';
 
 const answersBtn = ['Não\nlembrei', 'Quase não\nlembrei', 'Zap!'];
 
-export default function BoxQuestions({index, question, arrow, cont}){
-  
+export default function BoxQuestions({index, question, arrow, cont, arrayIcon, setArray}){
+
   const [stateQuestion, setStateQuestion] = React.useState(question.state);
   const [lockFunction, setLockFunction] = React.useState(false);
   const [icon, setIcon] = React.useState(0);
@@ -18,7 +18,7 @@ export default function BoxQuestions({index, question, arrow, cont}){
     else return true;
   }
 
-  function back(lock){
+  function checksAnswer(lock){
     if(lockFunction === false){
       if(stateQuestion !== true){
         question.state = !stateQuestion;
@@ -32,21 +32,25 @@ export default function BoxQuestions({index, question, arrow, cont}){
         if(lock === 'Não\nlembrei') {
           setIcon(1);
           setStateClass('style1');
+          setArray([...arrayIcon, 1]);
         }
         if(lock === 'Quase não\nlembrei') {
           setIcon(2);
           setStateClass('style2');
+          setArray([...arrayIcon, 2]);
         }
         if(lock === 'Zap!') {
           setIcon(3);
           setStateClass('style3'); 
+          setArray([...arrayIcon, 3]);
         }
       }
     }
   }
 
   return (
-        <li onClick={() => back()} className={`${stateQuestion ? 'questionOpen' : 'boxQuestions'}`}>
+        
+        <li onClick={() => checksAnswer()} className={`${stateQuestion ? 'questionOpen' : 'boxQuestions'}`}>
           <div className={`${stateQuestion ? 'esconder' : 'questionAligned'}`}>
             <p className={stateClass}>Pergunta {index+1}</p>
             <ion-icon class={`${lockFunction ? 'md hydrated esconder' : 'md hydrated'}`}name="play-outline"></ion-icon>
@@ -56,7 +60,7 @@ export default function BoxQuestions({index, question, arrow, cont}){
             <p>{msgQuestion}</p>
             <img onClick={() => setMsgQuestion(question.answers)} className={`${checks() ? 'esconder' : 'arrowQuestion'}`} src={arrow}/>
             <div className={`${checks() ? 'answersButton' : 'esconder'}`}>
-              {answersBtn.map(itens => <AnswerButton text={itens} key={itens} teste={back}/>)}
+              {answersBtn.map(itens => <AnswerButton text={itens} checksAnswer={checksAnswer}/>)}
             </div>
           </div>
       </li>

@@ -1,9 +1,9 @@
 import './style.css';
 
-function AnswerButton({text, teste}){
+function AnswerButton({text, checksAnswer}){
     return (
         <>
-        <div className='btn' onClick={() => teste(text)}><h1>{text}</h1></div>
+        <div className='btn' onClick={() => checksAnswer(text)}><h1>{text}</h1></div>
         </>
     );
 }
