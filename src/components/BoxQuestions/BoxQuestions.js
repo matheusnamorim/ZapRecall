@@ -1,5 +1,8 @@
 import React from 'react';
 import './style.css';
+import AnswerButton from '../AnswerButton/AnswerButton';
+
+const answersBtn = ['Não\nlembrei', 'Quase não\nlembrei', 'Zap!'];
 
 export default function BoxQuestions({index, question, arrow}){
   
@@ -21,9 +24,7 @@ export default function BoxQuestions({index, question, arrow}){
             <p>{msgQuestion}</p>
             <img onClick={() => setMsgQuestion(question.answers)} className={`${checks() ? 'esconder' : 'arrowQuestion'}`} src={arrow}/>
             <div className={`${checks() ? 'answersButton' : 'esconder'}`}>
-              <div className='btn'><h1>Não<br/>lembrei</h1></div>
-              <div className='btn'><h1>Quase não<br/>lembrei</h1></div>
-              <div className='btn'><h1>Zap!</h1></div>
+              {answersBtn.map(itens => <AnswerButton text={itens} key={itens}/>)}
             </div>
           </div>
       </li>
