@@ -5,6 +5,8 @@ import '../assets/css/reset.css';
 import '../assets/css/main.css';
 import logo from '../assets/img/logo.svg';
 import arrow from '../assets/img/Vector.svg';
+import party from '../assets/img/party.png';
+import sad from '../assets/img/sad.png';
 
 function App(){
 
@@ -24,7 +26,7 @@ function App(){
     if(screen === 0){
         return (<><HomeScreen img={logo} screen={setScreen}/></>);
     }else if(screen === 1){
-        return (<><QuestionsScreen img={logo} arrayQuestions={arrayQuestions} arrow={arrow}/></>);
+        return (<><QuestionsScreen img={logo} party={party} sad={sad} arrayQuestions={arrayQuestions} arrow={arrow}/></>);
     }
 }
 {/**/}

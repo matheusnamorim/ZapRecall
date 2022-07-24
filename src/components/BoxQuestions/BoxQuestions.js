@@ -51,18 +51,21 @@ export default function BoxQuestions({index, question, arrow, cont, arrayIcon, s
   return (
         
         <li onClick={() => checksAnswer()} className={`${stateQuestion ? 'questionOpen' : 'boxQuestions'}`}>
-          <div className={`${stateQuestion ? 'esconder' : 'questionAligned'}`}>
+          
+          <div className={`${stateQuestion ? 'hidden' : 'questionAligned'}`}>
             <p className={stateClass}>Pergunta {index+1}</p>
-            <ion-icon class={`${lockFunction ? 'md hydrated esconder' : 'md hydrated'}`}name="play-outline"></ion-icon>
+            <ion-icon class={`${lockFunction ? 'md hydrated hidden' : 'md hydrated'}`}name="play-outline"></ion-icon>
             <AnswerIcons type={icon}/>
           </div>
-          <div className={`${stateQuestion ? 'open' : 'esconder'}`}>
+
+          <div className={`${stateQuestion ? 'open' : 'hidden'}`}>
             <p>{msgQuestion}</p>
-            <img onClick={() => setMsgQuestion(question.answers)} className={`${checks() ? 'esconder' : 'arrowQuestion'}`} src={arrow}/>
-            <div className={`${checks() ? 'answersButton' : 'esconder'}`}>
+            <img onClick={() => setMsgQuestion(question.answers)} className={`${checks() ? 'hidden' : 'arrowQuestion'}`} src={arrow}/>
+            <div className={`${checks() ? 'answersButton' : 'hidden'}`}>
               {answersBtn.map(itens => <AnswerButton text={itens} checksAnswer={checksAnswer}/>)}
             </div>
           </div>
+
       </li>
     );
 }
