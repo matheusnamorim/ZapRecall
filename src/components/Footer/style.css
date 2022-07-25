@@ -43,6 +43,7 @@
     height: 32px;
     background-color: #FB6B6B;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .reset p{

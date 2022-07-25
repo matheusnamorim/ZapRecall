@@ -24,6 +24,7 @@
 }
 
 .inputZap{
+    cursor: pointer;
     width: 246px;
     height: 43px;
     border-radius: 5px;
@@ -49,6 +50,7 @@
 }
 
 .decks{
+    cursor: pointer;
     padding: 10px;
     margin-bottom: 20px;
     width: 246px;
