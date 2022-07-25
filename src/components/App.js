@@ -26,7 +26,7 @@ function App(){
     if(screen === 0){
         return (<><HomeScreen img={logo} screen={setScreen}/></>);
     }else if(screen === 1){
-        return (<><QuestionsScreen img={logo} party={party} sad={sad} arrayQuestions={arrayQuestions} arrow={arrow}/></>);
+        return (<><QuestionsScreen img={logo} screen={setScreen} party={party} sad={sad} arrayQuestions={arrayQuestions} arrow={arrow}/></>);
     }
 }
 {/**/}

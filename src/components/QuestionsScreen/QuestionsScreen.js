@@ -4,7 +4,7 @@ import AnswerIcons from '../AnswerIcons/AnswerIcons';
 import MsgFinal from '../MsgFinal/MsgFinal';
 import React from 'react';
 
-function QuestionsScreen({img, arrayQuestions, arrow, party, sad}){
+function QuestionsScreen({img, arrayQuestions, arrow, party, sad, screen}){
   
     const questions = [...arrayQuestions];
     let start = false;
@@ -33,7 +33,7 @@ function QuestionsScreen({img, arrayQuestions, arrow, party, sad}){
           <p>ZapRecall</p>
         </div>
     
-        <ul className="questions">
+        <ul className={`${checkFinal ? 'questions extend' : 'questions'}`}>
           {questions.map((itens, index) => (<BoxQuestions arrayIcon={array} setArray={setArray} question={itens} index={index} arrow={arrow} cont={incAnswers} key={index} />))}
         </ul>
         
@@ -43,6 +43,7 @@ function QuestionsScreen({img, arrayQuestions, arrow, party, sad}){
           <div className='icon'>
           {footerIcon.map(itens => <AnswerIcons type={itens}/>)}
           </div>
+          <div className={`${checkFinal ? 'reset' : 'hidden'}`} onClick={() => screen(0)}><p>REINICIAR RECALL</p></div>
         </div>
       </div>          
     );

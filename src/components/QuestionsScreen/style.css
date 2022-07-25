@@ -56,7 +56,11 @@
 }
 
 .final{
-    min-height: 171px;
+    min-height: 245px;
+}
+
+.extend{
+    margin-bottom: 250px;
 }
 
 .icon{
@@ -68,4 +72,23 @@
 
 .icon ion-icon{
     font-size: 23px;
+}
+
+.reset{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    width: 170px;
+    height: 32px;
+    background-color: #FB6B6B;
+    border-radius: 5px;
+}
+
+.reset p{
+    margin-bottom: 0;
+    font-weight: 400;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: center;
 }
