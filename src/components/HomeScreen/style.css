@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .homeScreen{
     min-height: 100vh;
     display: flex;
@@ -21,21 +23,27 @@
     margin-bottom: 30px;
 }
 
-.loginRecall{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.inputZap{
     width: 246px;
-    height: 54px;
-    background-color: #FFFFFF;
+    height: 43px;
     border-radius: 5px;
-    border: 1px solid #D70900;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    cursor: pointer;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #D70900;
+    background-color: #FFFFFF;
 }
 
-.loginRecall p{
-    font-size: 18px;
-    color: #D70900;
-    margin-bottom: 0;
+.inputValid{
+    opacity: 0.5;
+}
+
+.inputZap::placeholder{
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #ADADAD;
 }

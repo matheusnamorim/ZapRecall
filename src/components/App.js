@@ -22,9 +22,11 @@ function App(){
     ];
     arrayQuestions.sort(() => Math.random() - 0.5);
     const [screen, setScreen] = React.useState(0);
+    const [inc , setInc] = React.useState(0);
+    const [inputValue, setInputValue] = React.useState('');
 
     if(screen === 0){
-        return (<><HomeScreen img={logo} screen={setScreen}/></>);
+        return (<><HomeScreen img={logo} screen={setScreen} length={arrayQuestions.length} setInputValue={setInputValue} inc={inc} setInc={setInc}/></>);
     }else if(screen === 1){
         return (<><QuestionsScreen img={logo} screen={setScreen} party={party} sad={sad} arrayQuestions={arrayQuestions} arrow={arrow}/></>);
     }

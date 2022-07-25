@@ -1,0 +1,37 @@
+.loginRecall{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 246px;
+    height: 54px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    border: 1px solid #D70900;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.loginRecall p{
+    font-family: 'Recursive', sans-serif;
+    font-size: 18px;
+    color: #D70900;
+    margin-bottom: 0;
+}
+
+.invalidValue{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 246px;
+    height: 54px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #E8E8E8;
+}
+
+.invalidValue p{
+    font-family: 'Recursive', sans-serif;
+    font-size: 18px;
+    color: #C0C0C0;
+    margin-bottom: 0;
+}
