@@ -47,3 +47,20 @@
     font-size: 14px;
     color: #ADADAD;
 }
+
+.decks{
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 246px;
+    height: 43px;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #ADADAD;
+}
+
+.hidden{
+    display: none;
+}
