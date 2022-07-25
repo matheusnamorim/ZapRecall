@@ -3,10 +3,6 @@ import HomeScreen from "./HomeScreen/HomeScreen";
 import QuestionsScreen from "./QuestionsScreen/QuestionsScreen";
 import '../assets/css/reset.css';
 import '../assets/css/main.css';
-import logo from '../assets/img/logo.svg';
-import arrow from '../assets/img/Vector.svg';
-import party from '../assets/img/party.png';
-import sad from '../assets/img/sad.png';
 
 function App(){
 
@@ -26,9 +22,9 @@ function App(){
     const [inputValue, setInputValue] = React.useState('');
 
     if(screen === 0){
-        return (<><HomeScreen img={logo} screen={setScreen} length={arrayQuestions.length} setInputValue={setInputValue} inc={inc} setInc={setInc}/></>);
+        return (<><HomeScreen screen={setScreen} length={arrayQuestions.length} setInputValue={setInputValue} inc={inc} setInc={setInc}/></>);
     }else if(screen === 1){
-        return (<><QuestionsScreen img={logo} screen={setScreen} party={party} sad={sad} arrayQuestions={arrayQuestions} arrow={arrow}/></>);
+        return (<><QuestionsScreen screen={setScreen} zap={inputValue} arrayQuestions={arrayQuestions} /></>);
     }
 }
 {/**/}

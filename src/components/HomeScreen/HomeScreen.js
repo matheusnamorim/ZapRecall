@@ -1,8 +1,9 @@
 import React from 'react';
 import './style.css';
 import LoginButton from '../LoginButton/LoginButton';
+import img from '../../assets/img/logo.svg';
 
-export default function HomeScreen({img, screen, length, setInputValue, inc, setInc}){
+export default function HomeScreen({screen, length, setInputValue, inc, setInc}){
 
     const [inputValueAux, setInputValueAux] = React.useState('');
     if(inc === 0) alert('A meta de zaps deve ser um número entre 1 e ' + length);

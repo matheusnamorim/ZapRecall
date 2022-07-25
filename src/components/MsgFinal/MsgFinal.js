@@ -1,7 +1,9 @@
 import './style.css';
+import party from '../../assets/img/party.png';
+import sad from '../../assets/img/sad.png'
 
-export default function MsgFinal({type, check, party, sad}){
-    
+export default function MsgFinal({type, check}){
+
     if(type === 1 && check === true){
         return (
             <>

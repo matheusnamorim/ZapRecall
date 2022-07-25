@@ -2,10 +2,11 @@ import React from 'react';
 import './style.css';
 import AnswerButton from '../AnswerButton/AnswerButton';
 import AnswerIcons from '../AnswerIcons/AnswerIcons';
+import arrow from '../../assets/img/Vector.svg';
 
 const answersBtn = ['Não\nlembrei', 'Quase não\nlembrei', 'Zap!'];
 
-export default function BoxQuestions({index, question, arrow, cont, arrayIcon, setArray}){
+export default function BoxQuestions({index, question, cont, arrayIcon, setArray}){
 
   const [stateQuestion, setStateQuestion] = React.useState(question.state);
   const [lockFunction, setLockFunction] = React.useState(false);

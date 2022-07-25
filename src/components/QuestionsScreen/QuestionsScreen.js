@@ -1,10 +1,10 @@
 import './style.css';
 import BoxQuestions from "../BoxQuestions/BoxQuestions";
-import AnswerIcons from '../AnswerIcons/AnswerIcons';
-import MsgFinal from '../MsgFinal/MsgFinal';
+import Footer from '../Footer/Footer';
 import React from 'react';
+import img from '../../assets/img/logo.svg';
 
-function QuestionsScreen({img, arrayQuestions, arrow, party, sad, screen}){
+function QuestionsScreen({arrayQuestions, screen, zap}){
   
     const questions = [...arrayQuestions];
     let start = false;
@@ -14,6 +14,7 @@ function QuestionsScreen({img, arrayQuestions, arrow, party, sad, screen}){
     const [array, setArray] = React.useState('');
     const footerIcon = [...array];
     let footerIconAux = [];
+    let checkZap = [];
 
     function incAnswers(){
       setAnswersNumbers(answersNumbers + 1);
@@ -21,12 +22,15 @@ function QuestionsScreen({img, arrayQuestions, arrow, party, sad, screen}){
         start = !checkFinal;
         setCheckFinal(start);
         footerIconAux = footerIcon.filter((itens) => itens !== 1);
+        checkZap = footerIcon.filter(itens => itens === 3);
       }
-      if((footerIconAux.length !== 0 && footerIcon.length !==0 ) && (footerIconAux.length === footerIcon.length)) setTypeMsg(1);
-      else setTypeMsg(2);
+      if(footerIconAux.length !== 0 && footerIcon.length !==0){
+        if((footerIconAux.length === footerIcon.length) && (checkZap.length >= zap)) setTypeMsg(1);
+      } else setTypeMsg(2);
     }
 
     return(
+
         <div className="questionScreen">
         <div className="navBar">
           <img src={img}/>
@@ -34,17 +38,11 @@ function QuestionsScreen({img, arrayQuestions, arrow, party, sad, screen}){
         </div>
     
         <ul className={`${checkFinal ? 'questions extend' : 'questions'}`}>
-          {questions.map((itens, index) => (<BoxQuestions arrayIcon={array} setArray={setArray} question={itens} index={index} arrow={arrow} cont={incAnswers} key={index} />))}
+          {questions.map((itens, index) => (<BoxQuestions arrayIcon={array} setArray={setArray} question={itens} index={index} cont={incAnswers}/>))}
         </ul>
         
-        <div className={`${checkFinal ? 'footer final' : 'footer'}`}>
-          <MsgFinal type={typeMsg} check={checkFinal} party={party} sad={sad}/>
-          <p>{answersNumbers}/{arrayQuestions.length} CONCLUÍDOS</p>
-          <div className='icon'>
-          {footerIcon.map(itens => <AnswerIcons type={itens}/>)}
-          </div>
-          <div className={`${checkFinal ? 'reset' : 'hidden'}`} onClick={() => screen(0)}><p>REINICIAR RECALL</p></div>
-        </div>
+        <Footer checkFinal={checkFinal} typeMsg={typeMsg} answersNumbers={answersNumbers} arrayQuestions={arrayQuestions} footerIcon={footerIcon} screen={screen}/>
+
       </div>          
     );
 }
